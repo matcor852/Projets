@@ -126,7 +126,6 @@ void LPclient::dataReceived()
     }
     if(_socket->bytesAvailable() < _tailleMessage)
         return;
-
     QString resp;
     in >> resp;
     _tailleMessage = 0;
@@ -174,7 +173,7 @@ void LPclient::sslErrors(const QList<QSslError> &errors) const
     {
         emit appendInfos(error.errorString());
     }
-    _socket->ignoreSslErrors(errors);
+    //_socket->ignoreSslErrors(errors);
 }
 
 void LPclient::allocateOrders(const QString &order)
