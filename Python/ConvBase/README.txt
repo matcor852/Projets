@@ -10,7 +10,7 @@ Permet d'isoler le motif périodique (entre parenthèses) si partie décimale in
                 - splittable (si codage spécifique séléctionné et appliqué, ajoute un caractère '|' suivie du nombre de bits 
                   sur lequel est codé le résultat; optionnel, par défaut False)
                   
-Exemple d'utilisation :
+Exemples d'utilisation :
 
 print(ConvBase("49",10,3))                          --> 1211
 print(ConvBase("-12",3,10))                         --> -0005
