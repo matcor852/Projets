@@ -89,7 +89,7 @@ void ThreadSocket::sslError(const QList<QSslError> &errors) const
     }
     qDebug() << erroStr;
     _root->writeLogs("socket n°"+QString::number(_socketDescriptor)+" ssl error(s) : "+erroStr);
-    _ssl_socket->ignoreSslErrors();
+    //_ssl_socket->ignoreSslErrors();
 }
 
 void ThreadSocket::disconnected()
