@@ -13,7 +13,7 @@ exemple avec le fichier fourni :
 -t exCodeCoq.txt -l 5 -n 5 -p 3
 (afficher le top 5 des occurences de 3 mots successifs de 5 caractères minimum du fichier exCodeCoq.txt)
 
-ce qui affiche :
+ce qui affiche (motif : nombre d'occurences) :
 
 simpl rewrite simpl : 7
 simpl destruct (leb x1 x2) : 4
