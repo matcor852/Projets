@@ -1,0 +1,66 @@
+(* author : Andrej Bauer
+
+
+ Dear all,
+
+I have a theory which satisfies the axiom of extensionality (you may
+just cut and paste this entire message into Coq):
+*)
+
+Axiom extensionality: forall (A B : Set), forall (f g : A -> B),
+(forall x : A, f x = g x) -> f = g.
+
+(* I would like to use the axiom to automate rewriting under
+lambda abstractions. To illustrate what I wish, suppose we
+have a set with a binary operation and a neutral element: *)
+
+Parameter A : Set.
+Parameter op : A -> A -> A.
+Parameter e : A.
+
+Notation "x ** y" := (op x y) (at level 60, left associativity).
+
+Axiom e_neutral_1: forall x, x ** e = x.
+Axiom e_neutral_2: forall x, e ** x = x.
+
+(* The two axioms function very nicely as simplification rules
+and we add them to a database of rewrite hints. *)
+
+Hint Rewrite e_neutral_1 e_neutral_2 : my_hints.
+
+(* It is easy to prove the following: *)
+
+Lemma foo: forall x y, x ** e ** y ** e ** e = x ** y.
+Proof.
+intros.
+autorewrite with my_hints.
+reflexivity.
+Qed.
+
+(* Now suppose we want to simplify something that appears inside a
+lambda abstraction. We can still do it, but it's not as easy: *)
+
+Lemma bar (f : (A -> A) -> A):
+f (fun x => e ** x) = f (fun x => x ** e).
+Proof.
+intro f.
+replace (fun x : A => e ** x) with (fun x : A => x ** e).
+reflexivity.
+apply extensionality.
+intro x.
+autorewrite with my_hints.
+reflexivity.
+Qed.
+
+(* My question is how to write a tactic that will do an autorewrite
+inside a lambda abstraction. Note that I am assuming the axiom of
+extensionality, so this should be of some use.
+
+As a test example, the tactic should automatically simplify
+(fun x => e ** x ** e ** x) to (fun x => x ** x), even if it does
+not succeed in proving the final goal in which such a term appears.
+
+With kind regards,
+
+Andrej
+*)
