@@ -5,9 +5,9 @@ LP::LP(QObject *parent)
 {
 
 #ifdef Q_OS_WINDOWS
-    const QString dbPath = "D:/Projets/PemCrt/LP.db";
+    const QString dbPath = /*windows database path*/;
 #else
-    const QString dbPath = "/home/matcor/Qt_C++_LinuxOnly/ServerLP/LP.db";
+    const QString dbPath = /*unix database path*/;
 #endif
 
     _fileLogs.setFileName("logs_"+QDateTime::currentDateTime().toString("dd.MM.yyyy_hh.mm.ss")+".txt");
