@@ -5,6 +5,7 @@ LPclient::LPclient(QObject *parent) : QObject(parent)
     _socket = new QSslSocket(this);
     _socket->setProtocol(QSsl::TlsV1_3);
     _socket->setPeerVerifyMode(QSslSocket::VerifyPeer);
+    _socket->addCaCertificate(/*Ca Certificate*/)
 
     _socket->setProxy(QNetworkProxy::NoProxy);
     connect(_socket, &QSslSocket::encrypted, this, &LPclient::connecte);
