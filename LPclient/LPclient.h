@@ -57,8 +57,8 @@ private:
     const QString _playerInfosSeparator = "⁑∐₼";
     QString _username = "";
     QString _password = "";
-    const QString _ip = "matcor852.dynv6.net";//"127.0.0.1";//
-    const quint16 _port = 50885;
+    const QString _ip = /*server Ip or server Dns*/;
+    const quint16 _port = /*serverPort*/;
     packageSize _tailleMessage;
     unsigned int _nbParty;
     QSslSocket *_socket;
