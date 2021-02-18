@@ -34,8 +34,6 @@ public:
     QString playerIcon(QSslSocket *player) const;
 
 signals:
-    void incommingMessage(const QVariant) const;
-    void incommingDebug(const QVariant &) const;
     void roomInfos(const QVariant owner, const QVariant nbPlayers, const QVariant playersName,
                    const QVariant dareList, const QVariant truthList) const;
     void newRoom(const QVariant roomId) const;
@@ -51,8 +49,8 @@ private:
 
     const QString _primarySeparator     = "⏇∐⏈";
     const QString _secondarySeparator   = "⁑╬₼";
-    const QString _ipTcp = "192.168.1.85";//"127.0.0.1";//
-    const quint16 _portTcp = 50885;
+    const QString _ipTcp = /*serverIP*/;
+    const quint16 _portTcp = /*serverPort*/;
     Server *_tcpServer;
     SqlInteract *_dataBase;
     QFile _fileLogs;
