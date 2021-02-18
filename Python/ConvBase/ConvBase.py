@@ -206,4 +206,4 @@ class ConvBase:
             valeurDecimale += self.convChiffreVersIntBase10(nombre[i]) * pow(self.baseSrc, e)
         return valeurDecimale
     
-print(ConvBase("101000000",2,10))
+print(ConvBase("-49",10,2))
