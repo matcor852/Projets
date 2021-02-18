@@ -28,7 +28,6 @@ public:
     usint nbPlayers() const;
     QString gageList(const QString &table) const;
     QString owner() const;
-    void imposeConstraint(const QString &name, const QString &constraint);
 
 signals:
     void deletedRoom(const usint) const;
