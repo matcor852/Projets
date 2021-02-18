@@ -1,1 +1,1 @@
-Implémentation d'algorithmes de tri en python
+Implémentation d'algorithmes de tri de nombres en python
