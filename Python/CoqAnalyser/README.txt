@@ -6,6 +6,8 @@ Ce qui est compris entre parenthèses est considéré comme un unique mot.
                 -n (nombre d'occurences à afficher, décroissant; optionnel, par défaut 20), 
                 -p (occurences de p mots successifs; optionnel, par défaut 1)
                 
+fichiers test : #andrej_bauer#.txt et exCodeCoq.txt
+                
 exemple avec le fichier fourni :
 
 -t exCodeCoq.txt -l 5 -n 5 -p 3
