@@ -24,7 +24,6 @@ public:
     std::pair<bool,QString> CreateUser(const QString &nom, const QString &prenom, const QString &age,
                                        const QString &pseudo, const QString &genre, const QString &password, const QString &hostname);
     std::pair<bool,QString> Identify(const QString &user, const QString &pass);
-    void addConfigInfos(const QString &user, const QString &HostName, const QString &ip);       ///////////
     uint nbGages(const QString &table);
     QString retrieveGender(const QString &name);
     std::pair<uint, QString> retrieveGage(const QString &table, const QString &gender, const QString &alreadyAppeared);
