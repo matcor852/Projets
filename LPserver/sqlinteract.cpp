@@ -199,32 +199,6 @@ std::pair<bool, QString> SqlInteract::Identify(const QString &user, const QStrin
     return {_query.value(0).toBool(),user};
 }
 
-void SqlInteract::addConfigInfos(const QString &user, const QString &HostName, const QString &ip)
-{
-    if(testStrContent(user) || testStrContent(HostName) || testStrContent(ip))
-    {
-        return;
-    }
-    QMutexLocker locker(&_mutexDb);
-    if(!_db.open())
-    {
-        qDebug() << _db.lastError().text();
-        emit debugInfos(_db.lastError().text());
-        return;
-    }
-    if(!_query.exec("UPDATE Users SET HostName= HostName || '"%HostName%";' WHERE UserName = '"%user%"' AND HostName NOT LIKE '%"%HostName%";%'"))
-    {
-        qDebug() << _query.lastError().text();
-        emit debugInfos(_query.lastError().text());
-    }
-    if(!_query.exec("UPDATE Users SET Ip= Ip || '"%ip%";' WHERE UserName = '"%user%"' AND Ip NOT LIKE '%"%ip%";%'"))
-    {
-        qDebug() << _query.lastError().text();
-        emit debugInfos(_query.lastError().text());
-    }
-    _db.close();
-}
-
 uint SqlInteract::nbGages(const QString &table)
 {
     if(testStrContent(table))
