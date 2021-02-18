@@ -5,11 +5,11 @@ Server::Server(SqlInteract *db, LP* root, QObject *parent)
     : QTcpServer(parent), _root(root), _dataBase(db)
 {
 #ifdef Q_OS_WINDOWS
-    const QString key_path = "D:/Projets/PemCrt/server.key";
-    const QString cert_path = "D:/Projets/PemCrt/server.crt";
+    const QString key_path = /*windows pem private key path*/;
+    const QString cert_path = /*windows pem certificate path*/;
 #else
-    const QString key_path = "/home/matcor/Qt_C++_LinuxOnly/PemCrt/server.key"
-    const QString cert_path = "/home/matcor/Qt_C++_LinuxOnly/PemCrt/server.crt"
+    const QString key_path = /*unix pem private key path*/;
+    const QString cert_path = /*unix pem certificate path*/;
 #endif
     QByteArray key;
     QByteArray cert;
@@ -70,13 +70,6 @@ void Server::startServer(const QString &ip, const quint16 &portNb)
 void Server::incomingConnection(qintptr socketDescriptor)
 {
     _running_threads[socketDescriptor] = new ThreadSocket(socketDescriptor, _sslConfig, _dataBase, _root, _root);
-    connect(_running_threads.at(socketDescriptor), &ThreadSocket::finished, [this](const qintptr ptr){this->_running_threads.at(ptr)->deleteLater();qDebug() << "\tthread " << ptr << " deleted";
-                                                                                                      this->_running_threads.erase(ptr);qDebug() << "\tthread" << ptr << " erased";
-                                                                                                      qDebug() << "\nthreads running : \t" << this->_running_threads.size();});
+    connect(_running_threads.at(socketDescriptor), &ThreadSocket::finished, [this](const qintptr ptr){this->_running_threads.at(ptr)->deleteLater();});
     _running_threads.at(socketDescriptor)->start();
-    qDebug() << "\nthreads running : \t" << _running_threads.size();
-    for(auto const &d : _running_threads)
-    {
-        qDebug() << d.first << " : " << d.second;
-    }
 }
