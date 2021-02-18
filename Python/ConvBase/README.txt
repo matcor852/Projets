@@ -14,7 +14,7 @@ Exemples d'utilisation :
 
 print(ConvBase("49",10,3))                          --> 1211
 print(ConvBase("-12",3,10))                         --> -0005
-print(ConvBase("-c.3",45,4))                        --> -0230,0(103)
+print(ConvBase("-c.3",45,4))                        --> -0230,0(10 3)00
 print(ConvBase("-28",10,2,))                        --> -0001 1100
 print(ConvBase("-28",10,2,spacing=False))           --> -00011100
 print(ConvBase("-28",10,2,"c2",splittable=True))    --> 1110 0100|8
