@@ -1,4 +1,5 @@
 Générateur de questions de conversion style qcm, enregistré au format csv (séparateur : ';').
+Le format spécifique (num_theme, validation) résulte de la demande pour intégration dans une base de données.
 
 6 paramètres :  - start_questions (début de numérotation des questions, type int; nécessaire),
                 - nb_questions (nombre de questions à générer, type int; nécessaire),
