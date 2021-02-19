@@ -8,6 +8,7 @@ Générateur de questions de conversion style qcm, enregistré au format csv (s�
                 - etendue (interval de valeurs possibles pour les fausses propositions, de [(nb_ref-etendue)/2;(nb_ref+etendue)/2]
                   avec nb_ref étant la réponse attendue, type int; nécessaire)
 
+
 Exemples d'utilisation : 
 --------------------------------------------------------------------------------------------------------------------------------
 début questions : 0
