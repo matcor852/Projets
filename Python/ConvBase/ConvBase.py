@@ -13,6 +13,7 @@ class ConvBase:
         nb = nb.replace(" ","")
         self.conversion(nb)
     
+    
     def conversion(self,nb):
         try:#----------------------------------------------------   différencie partie entière (int) et décimale (float) du nombre
             p_1, p_2 = str(nb).split('.')
@@ -206,4 +207,4 @@ class ConvBase:
             valeurDecimale += self.convChiffreVersIntBase10(nombre[i]) * pow(self.baseSrc, e)
         return valeurDecimale
     
-print(ConvBase("-49",10,2))
+print(ConvBase("101000000",2,10))
