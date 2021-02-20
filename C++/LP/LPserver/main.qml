@@ -89,7 +89,7 @@ Window {
     }
     Item {
         id: roomContentDisplay
-        anchors.top: debugDisplay.bottom
+        anchors.top: networkInfos.bottom
         anchors.bottom: parent.bottom
         anchors.left: list.right
         width: parent.width * 2/3
