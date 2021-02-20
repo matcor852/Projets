@@ -13,15 +13,6 @@ Window {
 
     Connections {
         target: lpServeur
-
-        function onIncommingMessage(infos)
-        {
-            incommingDisplay.text = infos
-        }
-        function onIncommingDebug(debug)
-        {
-            debugDisplay.text = debug;
-        }
         function onRoomInfos(owner,nbPlayers,playersName,dareList,truthList)
         {
             roomOwnerDisplay.text = owner;
