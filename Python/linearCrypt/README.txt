@@ -31,13 +31,15 @@ Après application de ce chiffrement linéaire, 'm' est remplacé par 'o'.
 Pour déchiffrer 'o' avec la fonction linéaire 5x+6 :
 'o' est à l'index 14 si on part de a valant 0, on prend donc y = 14;
 
-    (E) : y ≡ 5x+6[26]
-    (E) : y-6 ≡ 5x[26]
-    (E) : 21(y-6) ≡ 21*5x[26]
-    21 est l'inverse modulo de 5 par 26, on peut le déterminer en python avec pow(5,-1,26)
-    (E) : 21(y-6) ≡ 105x[26]
-    (E) : 21(y-6) ≡ x[26]
-    (E) : x ≡ 21y-126[26]
+    (E) : y ≡ 5x+6[26]                  (E2) : y ≡ mx+p[mod]
+    (E) : y-6 ≡ 5x[26]                  (E2) : y-p ≡ mx[mod]
+    (E) : 21(y-6) ≡ 21*5x[26]           (E2) : pow(m,-1,mod)(y-p) ≡ pow(m,-1,mod)mx[mod]
+    21 est l'inverse modulo de 5 
+    par 26, on peut le déterminer 
+    en python avec pow(5,-1,26)
+    (E) : 21(y-6) ≡ 105x[26]            (E2) : pow(m,-1,mod)(y-p) ≡ pow(m,-1,mod)mx[mod]
+    (E) : 21(y-6) ≡ x[26]               (E2) : pow(m,-1,mod)(y-p) ≡ pow(m,-1,mod)mx[mod]
+    (E) : x ≡ 21y-126[26]               (E2) : x = ((pow(m,-1,mod)*(y-p))%mod)/((pow(m,-1,mod)*m)%mod)
     
     Après avoir déterminé la formule de déchiffrement, on peut l'appliquer :
     x ≡ 21*14-126[26]
@@ -48,7 +50,7 @@ La lettre à l'index 12 est 'm';
 Après application de ce déchiffrement linéaire, on retrouve bien la lettre d'origine.
 
 # Optimisation :
-    De plus, on remarque que x = ((v*(y-p))%mod)/((v*m)%mod), avec :
+    De plus, on remarque que x = ((v*(y-p))%mod)/((v*m)%mod) comme démontré dans (E2), avec :
     m : coefficient directeur
     p : ordonnée à l'origine
     mod : taille du réferentiel (26 dans l'exemple précédent)
