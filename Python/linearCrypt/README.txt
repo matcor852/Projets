@@ -1,9 +1,9 @@
-Implémentation de chiffrement/déchiffrement affine.
+Implémentation de chiffrement/déchiffrement linéaire.
 
 Ce chiffrement utilise une fonction affine de type y = mx+p.
 Bien que m et p puissent être choisis, leur pgcd doit être égal à 1 afin de pouvoir déchiffrer.
 
-# Exemples :
+**Exemples :**
 ## 1 :
     fonction : 5x+6
     réferentiel (ref) : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèçàù0123456789!#$%&'( )*+,-./:;<=>?@[\]^_`{|}~"
