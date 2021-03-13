@@ -1,4 +1,4 @@
-import string, sys
+import sys
 
 def pgcd(a,b):
     while b!=0:
@@ -14,11 +14,10 @@ def linearDecrypt(m,y,p,mod):
     return ((v*(y-p))%mod)/((v*m)%mod)
 
 
-m = 3
+m = 5
 p = 6
 plain = "linear crypt"
-
-ref = string.ascii_letters + "éèçàù " + string.digits + string.punctuation
+ref = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèçàù0123456789!#$%&'( )*+,-./:;<=>?@[\]^_`{|}~"
 mod = len(ref)
 
 if pgcd(m,mod) != 1:
