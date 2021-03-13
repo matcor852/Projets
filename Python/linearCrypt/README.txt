@@ -3,8 +3,8 @@ Implémentation de chiffrement/déchiffrement affine.
 Ce chiffrement utilise une fonction affine de type y = mx+p.
 Bien que m et p puissent être choisis, leur pgcd doit être égal à 1 afin de pouvoir déchiffrer.
 
-#Exemples :
-##1 :
+# Exemples :
+## 1 :
     fonction : 5x+6
     réferentiel (ref) : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèçàù0123456789!#$%&'( )*+,-./:;<=>?@[\]^_`{|}~"
     mod : 99
@@ -12,12 +12,12 @@ Bien que m et p puissent être choisis, leur pgcd doit être égal à 1 afin de 
     cipher : 9g]|
     texte déchiffré : mars
 
-#Explications :
+# Explications :
 
 soit y ≡ mx+p[mod]
 'mod' étant la taille du réferentiel choisi, dans le cas de l'alphabet minuscule ou majuscule vaut 26.
 
-#Chiffrement :
+# Chiffrement :
 Pour chiffrer 'm' avec la fonction linéaire 5x+6 :
 'm' est à l'index 12 si on part de a valant 0, on prend donc x = 12;
 
@@ -28,7 +28,7 @@ Pour chiffrer 'm' avec la fonction linéaire 5x+6 :
 La lettre à l'index 14 est 'o';
 Après application de ce chiffrement linéaire, 'm' est remplacé par 'o'.
 
-#Déchiffrement :
+# Déchiffrement :
 Pour déchiffrer 'o' avec la fonction linéaire 5x+6 :
 'o' est à l'index 14 si on part de a valant 0, on prend donc y = 14;
 
@@ -48,7 +48,7 @@ Pour déchiffrer 'o' avec la fonction linéaire 5x+6 :
 La lettre à l'index 12 est 'm';
 Après application de ce déchiffrement linéaire, on retrouve bien la lettre d'origine.
 
-#Optimisation :
+# Optimisation :
     De plus, on remarque que x = ((v*(y-p))%mod)/((v*m)%mod), avec :
     m : coefficient directeur
     p : ordonnée à l'origine
