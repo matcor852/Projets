@@ -14,11 +14,12 @@ def linearDecrypt(m,y,p,mod):
     return ((v*(y-p))%mod)/((v*m)%mod)
 
 
+# y = mx+p
 m = 5
 p = 6
-plain = "linear crypt"
 ref = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèçàù0123456789!#$%&'( )*+,-./:;<=>?@[\]^_`{|}~"
 mod = len(ref)
+plain = "linear crypt"
 
 if pgcd(m,mod) != 1:
     print("base is not invertible for the given modulus; pgcd of 'm' and 'mod' must equal 1.")
@@ -30,7 +31,6 @@ cipher = ""
 for char in plain:
     cipher += ref[linearCrypt(m,ref.index(char),p,mod)]
 print("cipher : ", cipher)
-
 
 #decrypt
 plaintext = ""
