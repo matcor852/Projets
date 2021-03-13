@@ -34,7 +34,7 @@ Pour déchiffrer 'o' avec la fonction linéaire 5x+6 :
     (E) : y ≡ 5x+6[26]
     (E) : y-6 ≡ 5x[26]
     (E) : 21(y-6) ≡ 21*5x[26]
-    21 est l'inverse modulo de de 5 par 26, on peut le déterminer en python avec pow(5,-1,26)
+    21 est l'inverse modulo de 5 par 26, on peut le déterminer en python avec pow(5,-1,26)
     (E) : 21(y-6) ≡ 105x[26]
     (E) : 21(y-6) ≡ x[26]
     (E) : x ≡ 21y-126[26]
