@@ -9,7 +9,7 @@ def linearCrypt(m,x,p,mod):
     return (m*x+p)%mod
 
 def linearDecrypt(m,y,p,mod):
-    #v : inverse modulo of m by mod
+    #v : inverse modulo de m par mod
     v = pow(m,-1,mod)
     return ((v*(y-p))%mod)/((v*m)%mod)
 
