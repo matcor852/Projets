@@ -19,6 +19,7 @@ m = 5
 p = 6
 ref = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèçàù0123456789!#$%&'( )*+,-./:;<=>?@[\]^_`{|}~"
 mod = len(ref)
+#tout les caractères de 'plain' doivent être dans 'ref'
 plain = "linear crypt"
 
 if pgcd(m,mod) != 1:
