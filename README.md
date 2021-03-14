@@ -2,7 +2,7 @@
 # Projets
 Matthieu CORREIA, dossier parcoursup n°613029
 
-Dépôt de mes projets réalisés pendant mes années de première et terminale (2019-2021).
+Dépôt de mes projets informatiques réalisés pendant mes années de première et terminale (2019-2021).
 
 Ces projets sont sous licence CC BY-NC-SA, ce qui implique, sans pour autant s'y limiter, que vous pouvez utiliser tels quels, modifier
 ou vous appuyer sur ces projets à condition que ce soit pour une utilisation non commerciale, que vous me créditiez et que vous licenciiez 
