@@ -1,4 +1,5 @@
 Convertisseur de bases pour nombres entiers et décimaux.
+Une demande spécifique était d'utiliser le moins de modules possibles.
 Codage VA+S, C1 et C2 supportés pour conversion vers binaire.
 Permet d'isoler le motif périodique (entre parenthèses) si partie décimale infinie.
 
