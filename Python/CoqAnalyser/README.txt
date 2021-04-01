@@ -1,7 +1,7 @@
 Analyseur de code en language Coq pour les occurences de mots comprises entre 'Proof' et 'Qed' ou 'Admitted' ou 'Defined'.
 Ce qui est compris entre parenthèses est considéré comme un unique mot.
 
-4 paramètres :  -t (chemin; nécessaire), 
+4 paramètres :  -t (chemin du .txt à analyser (absolu ou relatif); nécessaire), 
                 -l (longueur minimale des mots; optionnel, par défaut 3),
                 -n (nombre d'occurences à afficher, décroissant; optionnel, par défaut 20), 
                 -p (occurences de p mots successifs; optionnel, par défaut 1)
