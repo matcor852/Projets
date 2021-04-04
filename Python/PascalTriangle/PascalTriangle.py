@@ -1,8 +1,10 @@
-def pascal(n):
+def pascal(n,verbose=False):
 	if n==0 or n==1:
 		return [1]*(n+1)
 	else:
-		p = pascal(n-1)
+		p = pascal(n-1,verbose)
+		if verbose:
+			print(p)
 		return [1] + [p[e] + p[e+1] for e in range(len(p)-1)] + [1]
 
-print(pascal(7))
+print(pascal(7,True))
