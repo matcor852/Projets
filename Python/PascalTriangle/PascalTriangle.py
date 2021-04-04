@@ -1,5 +1,5 @@
 def pascal(n,verbose=False):
-	if n==0 or n==1:
+	if n <=1 :
 		return [1]*(n+1)
 	else:
 		p = pascal(n-1,verbose)
