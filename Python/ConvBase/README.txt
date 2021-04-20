@@ -7,7 +7,7 @@ Permet d'isoler le motif périodique (entre parenthèses) si partie décimale in
                 - baseSrc (base du nombre à convertir, type int; nécessaire),
                 - baseDest (base cible du nombre à convertir, type int; nécessaire),
                 - codage (codage si base cible binaire et résultat négatif, type str; optionnel, par défaut pas de codage),
-                - spacing (espacement des chiffres/carctères du résultat, type bool; optionnel, par défaut True),
+                - spacing (espacement des chiffres/caractères du résultat, type bool; optionnel, par défaut True),
                 - splittable (si codage spécifique séléctionné et appliqué, ajoute un caractère '|' suivie du nombre de bits 
                   sur lequel est codé le résultat; optionnel, par défaut False)
                   
